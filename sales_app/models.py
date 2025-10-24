@@ -2,28 +2,15 @@ from django.db import models
 
 
 class Customer(models.Model):
-    first_name = models.CharField(
-        max_length=30, help_text="Enter first name")
-    last_name = models.CharField(max_length=30, help_text="Enter last name")
-    newsletter = models.BooleanField(
-        default=True, help_text="Subscribe to newsletter")
-    email = models.EmailField(default="", blank=True,
-                              help_text="Enter email address")
-    account = models.FloatField(
-        blank=True, null=True, help_text="Enter account balance")
-    slug = models.SlugField(blank=True, default="", help_text="Enter slug")
-
-    class Meta:
-        verbose_name = "Customer"
-        verbose_name_plural = "Customers"
-        ordering = ["first_name"]
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    newsletter = models.BooleanField(default=True)
+    email = models.EmailField(default="", blank=True)
+    account = models.FloatField(blank=True, null=True)
+    slug = models.SlugField(blank=True, null=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
-
-    def save(self):
-        self.account = 1432432
-        return super().save()
 
 
 class Product(models.Model):

@@ -11,27 +11,27 @@ class CustomerAdmin(admin.ModelAdmin):
 
     prepopulated_fields = {"slug": ["first_name", "last_name"]}
 
-    fieldsets = [
-        (
-            None,
-            {
-                "fields": [
-                    "first_name",
-                    "last_name",
-                    "account"
-                ]
-            },
-        ),
-        (
-            "Advanced options",
-            {
-                "classes": ["collapse"],
-                "fields": [
-                    "newsletter", "slug"
-                ],
-            },
-        ),
-    ]
+    # fieldsets = [
+    #     (
+    #         None,
+    #         {
+    #             "fields": [
+    #                 "first_name",
+    #                 "last_name",
+    #                 "account"
+    #             ]
+    #         },
+    #     ),
+    #     (
+    #         "Advanced options",
+    #         {
+    #             "classes": ["collapse"],
+    #             "fields": [
+    #                 "newsletter", "slug"
+    #             ],
+    #         },
+    #     ),
+    # ]
 
 
 admin.site.register(Customer, CustomerAdmin)
