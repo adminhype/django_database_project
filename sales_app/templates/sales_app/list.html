@@ -1,0 +1,7 @@
+<ul>
+    {% for customer in object_list %}
+    <li>{{ customer.first_name }}</li>
+    {% empty %}
+    <li>No customers found.</li>
+    {% endfor %}
+</ul>
